@@ -11,53 +11,7 @@
     <body id="body01" >
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
-        <!-- use jssor.slider.debug.js instead for debug -->
-        <script>
-            jQuery(document).ready(function ($) {
-
-                var jssor_1_SlideshowTransitions = [
-                    {$Duration: 1200, $Opacity: 2}
-                ];
-
-                var jssor_1_options = {
-                    $AutoPlay: true,
-                    $SlideshowOptions: {
-                        $Class: $JssorSlideshowRunner$,
-                        $Transitions: jssor_1_SlideshowTransitions,
-                        $TransitionsOrder: 1
-                    },
-                    $ArrowNavigatorOptions: {
-                        $Class: $JssorArrowNavigator$
-                    },
-                    $BulletNavigatorOptions: {
-                        $Class: $JssorBulletNavigator$
-                    }
-                };
-
-                var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-                //responsive code begin
-                //you can remove responsive code if you don't want the slider scales while window resizing
-                function ScaleSlider() {
-                    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-                    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-                    if (w) {
-                        w = Math.min(w - 72.5, 1000);
-                        jssor_1_slider.$ScaleWidth(w);
-                    } else {
-                        window.setTimeout(ScaleSlider, 30);
-                    }
-                }
-                ScaleSlider();
-                $(window).bind("load", ScaleSlider);
-                $(window).bind("resize", ScaleSlider);
-                $(window).bind("orientationchange", ScaleSlider);
-                //responsive code end
-            });
-        </script>
-        <!-- #startregion Header -->
-
+        <script type="text/javascript" src="js/slideshow.resizer.js"></script>
         <div class="header_region">
             <div class="header_top">
                 <img id="header_logo" src="img/header_logo.png" alt="Michal Trneny"/>
@@ -65,15 +19,15 @@
                     <hr class="header_line"/>
                     <div class="menu_main">
                         <nav id="menu">
-                            <ul id="menu_closed">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Gallery</a></li>
-                                <li><a href="#">Video</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#menu_closed">&#215 Menu</a></li>
-                                <li><a href="#menu">&#9776; Menu</a></li>
+                            <ul class="nav_ul" id="menu_closed">
+                                <li class="nav_li"><a class="nav_a" href="#menu_closed">&times; Menu</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#menu">&#9776; Menu</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">Home</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">About</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">Blog</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">Gallery</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">Video</a></li>
+                                <li class="nav_li"><a class="nav_a" href="#">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -110,7 +64,6 @@
                         <img data-u="image" src="img/slideshow/06.png" />
                     </div>
                     <a data-u="ad" href="http://www.jssor.com" style="display:none">jQuery Slider</a>
-
                 </div>
                 <!-- Bullet Navigator -->
                 <div data-u="navigator" class="jssorb05" style="bottom:20px;right:20px;" data-autocenter="1">
@@ -133,12 +86,12 @@
                 <hr class="header_line" id="blog_line"/>
             </div>
             <div class="blog_text">
-                <h3>Header</h3>
+                <a href="#"><h3>Header</h3></a>
                 <p class="date">November 27, 2013</p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed posuere tellus. Pellentesque tristique felis eu turpis imperdiet lacinia. Suspendisse leo erat, interdum non lobortis at, cursus nec enim. Duis ut nisl vulputate, ultricies nisl vel, blandit urna. Proin semper, nunc in consequat dictum, odio ex tempor nunc, vitae porta sem tortor sed lectus. Nunc in ipsum luctus erat finibus ullamcorper eget vel nisl. Vestibulum ornare mi vitae mi facilisis mollis. Maecenas aliquet tellus sit amet blandit convallis. Donec molestie erat sit amet odio semper fringilla. Aliquam porttitor luctus neque, at fringilla augue euismod a. Pellentesque et massa a orci tincidunt sollicitudin sed vel eros. Duis sit amet gravida lacus. Praesent tincidunt mi eros, in lobortis felis faucibus in. Aliquam eget est ex. Aenean malesuada luctus tellus, id suscipit orci bibendum in. Maecenas nibh neque, feugiat at velit non, tempor mattis tellus.
                 </p>
-                <a href="" class="read_more">Read more</a>
+                <a href="#" class="read_more">Read more</a>
             </div>
             <div class="blog_end">
             </div>
@@ -146,16 +99,16 @@
         <div class="footer">
             <ul class="social_list">
                 <li class="social_item">
-                    <a href="https://www.facebook.com/michaltrnenyart/?fref=ts" class="social_button" id="facebook"></a>
+                    <a href="https://www.facebook.com/michaltrnenyart/?fref=ts" class="facebook"></a>
                 </li>
                 <li class="social_item">
-                    <a href="" class="social_button" id="youtube"></a>
+                    <a href="" class="youtube"></a>
                 </li>
                 <li class="social_item">
-                    <a href="" class="social_button" id="twitter"></a>
+                    <a href="" class="twitter"></a>
                 </li>
             </ul>
-            <span id="copyright">Michal Trněný © 2016</span>
+            <span id="copyright">Michal Trněný &copy; 2016</span>
         </div>
     </body>
 </html>

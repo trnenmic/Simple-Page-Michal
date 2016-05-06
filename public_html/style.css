@@ -71,13 +71,11 @@
     display: block;
     margin: 0 auto;
     min-height: 1px;
-    max-width: 1100px;
-    padding: 20px 5px 20px 5px;
-    border-radius: 25px;
+    max-width: 1050px;
     box-shadow: 10px 10px 20px rgba(0,0,0,0.75);
     border-style: outset;
-    border-color: rgba(230,240,235,0.75);
-    background-color: rgba(220, 230, 225, 0.9);//rgba(90,120,145, 0.25);
+    border-color: #dee8e6;
+    background-color: #c8d2d7;
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -159,7 +157,7 @@
 
 p {
     font-family: georgia;
-    color: rgb(7, 7, 9);
+    color: #070709;
     max-width: 55em;
 }
 
@@ -173,14 +171,13 @@ strong { color: rgb(41, 183, 206); }
 nav {
     font-size: 0.9em;
     background-color: rgba(5, 8, 10, 0.4);
-    //box-shadow: 0 1px 2px rgba(19, 51, 61, 0.5);
     margin: 3em 0 6em;
     padding: 0 1em;
     height: 44px; /* Menu height */
     overflow: hidden; /* Don't show anything outside the nav */
 }
 
-nav ul {
+.nav_ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -188,10 +185,10 @@ nav ul {
     position: relative; /* Position the menu button relative to this item */
 }
 
-nav li { display: inline-block;
+.nav_li { display: inline-block;
 }
 
-nav a {
+.nav_a {
     display: inline-block;
     padding: 0 1em;
     color: rgb(236, 236, 236);
@@ -204,69 +201,53 @@ nav a {
     height: 44px; /* Menu height */
 }
 
-nav a:hover { 
+.nav_a:hover { 
     background-color: rgba(255, 255, 255, 0.08);
     color: rgb(25,116,200);
 }
 
-nav a:active { 
+.nav_a:active { 
     background-color: rgba(255, 255, 255, 0.06);
     color: rgb(61,143,223);
 }
 
-nav li:last-child { /* The menu button */
-    position: absolute; /* Move the menu button out of flow */
-    right: 0;
-    bottom: 44px; /* Move upwards, the same distance as the menu height */
-    background: rgba(23,38,62, 1);
-    //background-image: linear-gradient(to right, rgba(19, 51, 61, 0) 0, rgba(19, 51, 61, 1) 2em);
-    //padding-left: 3em;
-    //border-radius: 2px;
+.nav_li:first-child{
+    display: none;
 }
 
-nav li:nth-last-child(2) { /* The close button */ display: none; background-color: rgba(23,38,62, 1); }
-
-nav#menu:target {
+#menu:target {
     height: auto;
     padding: 0;
 }
 
-nav#menu:target ul { max-height: none;
+#menu:target ul { max-height: none;
 }
 
-nav#menu:target li { display: block;  }
+#menu:target li { display: block;  }
 
-nav#menu:target a {
+#menu:target a {
     display: block;
     padding: 0 2em;
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-nav#menu:target a:hover { 
+#menu:target a:hover { 
     background-color: rgba(255, 255, 255, 0.12);
 }
 
-nav#menu:target a:active { 
+#menu:target a:active { 
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-nav#menu:target li:not(:first-child) { margin-top: 2px; }
+#menu:target li { border-top: 1px solid; border-bottom: 1px solid; border-top-color: #1d1e21; border-bottom-color: #141416;}
 
-nav#menu:target li:last-child { display: none; }
-
-nav#menu:target li:nth-last-child(2) {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    border-left: 2px solid rgb(97, 116, 125);
-}
+#menu:target li:nth-child(2) { 
+    display: none; }
 
 #menu_closed{
     box-shadow: none;
     border: none;
-    padding:0px 0px 0px 0px;
+    padding: 0;
 }
 #menu{
     margin: 0 auto;
@@ -288,6 +269,7 @@ nav#menu:target li:nth-last-child(2) {
     max-width: 1050px;
 }
 .blog_header, .blog_end, .footer{
+    padding: 10px 35px 10px 35px;
     display: block;
     color: white;
     background-color: rgba(5, 8, 10, 0.4);
@@ -303,7 +285,6 @@ nav#menu:target li:nth-last-child(2) {
 
 .blog_header {
     vertical-align: bottom;
-    padding: 10px 35px 10px 35px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     min-height: 30px;
@@ -311,7 +292,6 @@ nav#menu:target li:nth-last-child(2) {
 
 .blog_end{
     vertical-align: top;
-    min-height: 20px;
     margin-bottom: 75px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -324,6 +304,14 @@ nav#menu:target li:nth-last-child(2) {
 h3{
     color: #1974c8;
     text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+a h3:hover{
+    color: #479cea;
 }
 
 .read_more{
@@ -365,13 +353,11 @@ h3{
     display: block;
     vertical-align: top;
     margin: 0 auto;
-    border-color: rgba(230,240,235,0.75);
-    background-color: rgba(220, 230, 225, 0.9);
+    background-color: #c8d2d7;
     border-radius: 5px;
-    padding: 10px 35px 40px 35px;
     box-shadow: 10px 10px 20px rgba(0,0,0,0.75);
     border-style: outset;
-    border-color: rgba(230,240,235,0.75);
+    border-color: #dee8e6;
 }
 
 .footer{
@@ -405,10 +391,16 @@ h3{
     nav{
         font-size: 0.7em;
     }
-    blog_text{
-        padding: 10px 10px 25px 10px;
+    .blog_text{
+        padding: 0px 5px 15px 5px;
+    }
+
+    .slideshow_region{
+        padding: 10px 10px 20px 10px;
+        border-radius: 10px;
     }
 }
+
 
 @media screen and (min-width: 480px) {
     #header_logo{
@@ -428,11 +420,16 @@ h3{
     nav{
         font-size: 0.9em;
     }
-    blog_text{
-        padding: 10px 10px 25px 10px;
+    .blog_text{
+        padding: 5px 15px 25px 15px;
     }
 
-    .social_button{
+    .slideshow_region{
+        padding: 25px 5px 25px 5px;
+        border-radius: 25px;
+    }
+
+    .facebook, .youtube, .twitter {
         display: inline-block;
         min-height: 50px;
         min-width: 50px;
@@ -441,11 +438,20 @@ h3{
         background-size: cover;
         border-radius: 10px;
     }
+    .facebook{background-image: url("img/gui/facebook_standard.png");}
+    .youtube{background-image: url("img/gui/youtube_standard.png");}
+    .twitter{background-image: url("img/gui/twitter_standard.png");}
+    .facebook:hover{background-image: url("img/gui/facebook_hover.png");}
+    .youtube:hover{background-image: url("img/gui/youtube_hover.png");}
+    .twitter:hover{background-image: url("img/gui/twitter_hover.png");}
+}
 
-    #facebook{background-image: url("img/gui/facebook_standard.png");}
-    #youtube{background-image: url("img/gui/youtube_standard.png");}
-    #twitter{background-image: url("img/gui/twitter_standard.png");}
-    #facebook:hover{background-image: url("img/gui/facebook_hover.png");}
-    #youtube:hover{background-image: url("img/gui/youtube_hover.png");}
-    #twitter:hover{background-image: url("img/gui/twitter_hover.png");}
+@media screen and (min-width: 600px){
+    nav li:nth-child(2){
+        display: none;
+    }
+
+    .blog_text{
+        padding: 10px 35px 40px 35px;
+    }
 }
